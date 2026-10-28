@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="ҰБТ-ға дайындыққа арналған онлайн жаттығу">
+  <title>ҰБТ | Дайындық жаттығуы</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Басты бет">
+      <span class="brand-mark">Ұ</span><span>ҰБТ<span class="brand-light">.дайындық</span></span>
+    </a>
+    <div class="topbar-right"><span class="live-dot"></span> Жаттығу режимі</div>
+  </header>
+
+  <main id="top" class="page-shell">
+    <section class="intro">
+      <div class="eyebrow"><span class="eyebrow-line"></span> ӨЗ ҚАРҚЫНЫҢМЕН ДАЙЫНДАЛ</div>
+      <h1>Біліміңді тексер.<br><span>Мақсатыңа жақында.</span></h1>
+      <p>Тапсырмаларды орындап, нәтижені бірден көр. Жауаптарың мұғалімге де жіберіледі.</p>
+    </section>
+
+    <section class="workspace" aria-label="ҰБТ жаттығуы">
+      <aside class="side-card">
+        <div class="side-heading"><span class="subject-icon">✦</span><div><span class="small-label">ТАҢДАЛҒАН ПӘН</span><strong>Информатика</strong></div></div>
+        <div class="side-rule"></div>
+        <div class="test-info"><span class="info-icon">◷</span><div><span class="small-label">ОРЫНДАУ УАҚЫТЫ</span><strong>Өз қарқыныңмен</strong></div></div>
+        <div class="test-info"><span class="info-icon">▤</span><div><span class="small-label">ТАПСЫРМА САНЫ</span><strong><span id="question-count">8</span> сұрақ</strong></div></div>
+        <div class="side-note"><span>💡</span><p>Жауаптарды белгіле. Соңында нәтижені көріп, мұғалімге жібер.</p></div>
+        <div class="side-bottom"><span class="avatar">Ұ</span><span>Оқушыға арналған<br><b>жаттығу</b></span></div>
+      </aside>
+
+      <section class="quiz-card">
+        <div class="card-topline"><span class="section-tag">БІЛІМІҢДІ ТЕКСЕР</span><span id="progress-label" class="progress-label">0 / 8 жауап</span></div>
+        <div class="progress-track"><div id="progress-bar" class="progress-fill"></div></div>
+
+        <div id="student-fields" class="student-fields">
+          <label>Оқушының аты-жөні <span>*</span><input id="student-name" type="text" autocomplete="name" placeholder="Мысалы, Айдана Нұрланқызы" required></label>
+          <div class="field-row">
+            <label>Сыныбы <span>*</span><input id="student-class" type="text" placeholder="11 «А»" required></label>
+            <label>Мектебі<input id="student-school" type="text" placeholder="Мектеп атауы"></label>
+          </div>
+        </div>
+
+        <div id="questions" class="questions"></div>
+
+        <!-- Spam honeypot: keep hidden from real visitors. -->
+        <label class="honey" aria-hidden="true">Бұл өрісті толтырмаңыз<input id="website" type="text" tabindex="-1" autocomplete="off"></label>
+
+        <div id="submit-area" class="submit-area">
+          <p id="form-message" class="form-message" role="status">Жалғастыру үшін аты-жөніңіз бен сыныбыңызды жазыңыз.</p>
+          <button id="submit-button" class="submit-button" type="button">Нәтижені жіберу <span>→</span></button>
+        </div>
+        <div id="result" class="result" hidden></div>
+      </section>
+    </section>
+    <footer><span>ҰБТ-ға дайындық</span><span>Күн сайын бір қадам алға ✦</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
