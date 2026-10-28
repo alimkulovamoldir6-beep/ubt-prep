@@ -1,64 +1,45 @@
 <!doctype html>
 <html lang="kk">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f7fb">
-  <meta name="description" content="ҰБТ-ға дайындыққа арналған онлайн жаттығу">
-  <title>ҰБТ | Дайындық жаттығуы</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fc"><meta name="description" content="Информатика пәнінен ҰБТ-ға дайындық">
+  <title>InfoLab — Информатика ҰБТ</title><link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#top" aria-label="Басты бет">
-      <span class="brand-mark">Ұ</span><span>ҰБТ<span class="brand-light">.дайындық</span></span>
-    </a>
-    <div class="topbar-right"><span class="live-dot"></span> Жаттығу режимі</div>
+  <header class="header" id="top">
+    <a class="brand" href="#top"><span class="brand-icon">⌘</span><span><b>Info<span>Lab</span></b><small>11-СЫНЫП · ҰБТ-ДАЙЫНДЫҚ</small></span></a>
+    <nav><a href="#topics">Тақырыптар</a><a href="#path">Дайындық жолы</a><a href="#test">Тест</a><a class="nav-cta" href="#test">Тест бастау ↗</a></nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Мәзірді ашу">☰</button>
   </header>
 
-  <main id="top" class="page-shell">
-    <section class="intro">
-      <div class="eyebrow"><span class="eyebrow-line"></span> ӨЗ ҚАРҚЫНЫҢМЕН ДАЙЫНДАЛ</div>
-      <h1>Біліміңді тексер.<br><span>Мақсатыңа жақында.</span></h1>
-      <p>Тапсырмаларды орындап, нәтижені бірден көр. Жауаптарың мұғалімге де жіберіледі.</p>
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy"><span class="badge"><i></i> БІЛІМІҢДІ БҮГІННЕН БАСТАП ШЫҢДА</span>
+        <h1>Информатиканы<br><em>сенімді меңгер.</em></h1>
+        <p>ҰБТ-ға арналған қысқа түсіндірмелер мен интерактивті тақырыптық тесттер. Тақырыпты қайтала, біліміңді тексер, нәтижені бақыла.</p>
+        <div class="hero-actions"><a class="button primary" href="#test">Қазір тест тапсыру →</a><a class="button secondary" href="#topics">Тақырыптарды қарау</a></div>
+        <div class="hero-notes">✓ Тақырып бойынша түсіндірме · ✓ Мысалдар · ✓ Нәтиже Google кестесіне жіберіледі</div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit"></div><div class="code-chip">&lt; code /&gt;<br><span>if білім == өсім:</span></div><div class="step-chip"><b>+1 қадам</b><small>КҮН САЙЫН АЛҒА</small></div><div class="spark">✦</div></div>
     </section>
 
-    <section class="workspace" aria-label="ҰБТ жаттығуы">
-      <aside class="side-card">
-        <div class="side-heading"><span class="subject-icon">✦</span><div><span class="small-label">ТАҢДАЛҒАН ПӘН</span><strong>Информатика</strong></div></div>
-        <div class="side-rule"></div>
-        <div class="test-info"><span class="info-icon">◷</span><div><span class="small-label">ОРЫНДАУ УАҚЫТЫ</span><strong>Өз қарқыныңмен</strong></div></div>
-        <div class="test-info"><span class="info-icon">▤</span><div><span class="small-label">ТАПСЫРМА САНЫ</span><strong><span id="question-count">8</span> сұрақ</strong></div></div>
-        <div class="side-note"><span>💡</span><p>Жауаптарды белгіле. Соңында нәтижені көріп, мұғалімге жібер.</p></div>
-        <div class="side-bottom"><span class="avatar">Ұ</span><span>Оқушыға арналған<br><b>жаттығу</b></span></div>
-      </aside>
+    <section class="stats wrap" aria-label="Курс туралы"><div class="stat"><span class="stat-icon violet">📚</span><div><b>6 бөлім</b><small>ҰБТ спецификациясы бойынша</small></div></div><div class="stat"><span class="stat-icon green">🧠</span><div><b>13 тақырып</b><small>түсіндірме және шағын тест</small></div></div><div class="stat"><span class="stat-icon yellow">⚡</span><div><b id="question-count">15</b><small>сұрақтық жаттығу тесті</small></div></div></section>
 
-      <section class="quiz-card">
-        <div class="card-topline"><span class="section-tag">БІЛІМІҢДІ ТЕКСЕР</span><span id="progress-label" class="progress-label">0 / 8 жауап</span></div>
-        <div class="progress-track"><div id="progress-bar" class="progress-fill"></div></div>
+    <section class="student-strip wrap"><div class="student-strip-head"><b>Оқушы туралы мәлімет</b><span>Шағын тест нәтижесін кестеге жіберу үшін толтырыңыз</span></div><div id="student-fields" class="student-fields"><label>Аты-жөні <i>*</i><input id="student-name" type="text" placeholder="Аты-жөніңіз"></label><label>Сыныбы <i>*</i><input id="student-class" type="text" placeholder="11 «А»"></label><label>Мектебі<input id="student-school" type="text" placeholder="Мектеп атауы"></label></div></section>
 
-        <div id="student-fields" class="student-fields">
-          <label>Оқушының аты-жөні <span>*</span><input id="student-name" type="text" autocomplete="name" placeholder="Мысалы, Айдана Нұрланқызы" required></label>
-          <div class="field-row">
-            <label>Сыныбы <span>*</span><input id="student-class" type="text" placeholder="11 «А»" required></label>
-            <label>Мектебі<input id="student-school" type="text" placeholder="Мектеп атауы"></label>
-          </div>
-        </div>
+    <section class="section wrap" id="topics"><div class="section-head"><div><span class="kicker">КУРС ҚҰРЫЛЫМЫ</span><h2>Бөлімдер мен тақырыптар</h2><p>Тақырыпты таңдаңыз: түсіндірмені оқып, қысқа сұрақпен өзіңізді тексеріңіз.</p></div><span class="topic-count">13 тақырып</span></div><div id="topic-list" class="topic-list"></div></section>
 
-        <div id="questions" class="questions"></div>
+    <section class="path-section" id="path"><div class="wrap path-inner"><div><span class="kicker">ҚАЛАЙ ДАЙЫНДАЛАМЫН?</span><h2>Дайындық жолы</h2><p>Әр бөлімді бірізді қайталап, түсінгеніңізді тақырыптық сұрақтармен бекітіңіз.</p></div><ol class="path-steps"><li><b>01</b><span><strong>Бөлімді таңда</strong><small>Өзіңе қажет тақырыптан баста.</small></span></li><li><b>02</b><span><strong>Түсіндірмені оқы</strong><small>Негізгі ұғым мен мысалды қайтала.</small></span></li><li><b>03</b><span><strong>Сұрақпен бекіт</strong><small>Тақырыптық тесттен өзіңді тексер.</small></span></li><li><b>04</b><span><strong>Қорытынды тест тапсыр</strong><small>Нәтижеңді мұғалімге жібер.</small></span></li></ol></div></section>
 
-        <!-- Spam honeypot: keep hidden from real visitors. -->
-        <label class="honey" aria-hidden="true">Бұл өрісті толтырмаңыз<input id="website" type="text" tabindex="-1" autocomplete="off"></label>
-
-        <div id="submit-area" class="submit-area">
-          <p id="form-message" class="form-message" role="status">Жалғастыру үшін аты-жөніңіз бен сыныбыңызды жазыңыз.</p>
-          <button id="submit-button" class="submit-button" type="button">Нәтижені жіберу <span>→</span></button>
-        </div>
-        <div id="result" class="result" hidden></div>
-      </section>
+    <section class="section wrap test-section" id="test"><div class="section-head"><div><span class="kicker">ӨЗІҢДІ ТЕКСЕР</span><h2>Қорытынды жаттығу тесті</h2><p>Барлық сұраққа жауап беріп, нәтижені мұғалімге жіберіңіз.</p></div><span class="topic-count">15 сұрақ · Информатика</span></div>
+      <div class="quiz-card"><div class="quiz-top"><b>Тест сұрақтары</b><span>Жіберер алдында жоғарыдағы аты-жөніңіз бен сыныбыңызды тексеріңіз</span></div>
+        <div class="quiz-meta"><span class="kicker">ҚОРЫТЫНДЫ ТЕСТ</span><span id="progress-label" class="progress-label">0 / 15 жауап</span></div><div class="progress-track"><div id="progress-bar" class="progress-fill"></div></div>
+        <div id="questions" class="questions"></div><label class="honey" aria-hidden="true">Leave empty<input id="website" type="text" tabindex="-1" autocomplete="off"></label>
+        <div id="submit-area" class="submit-area"><p id="form-message" class="form-message" role="status">Алдымен аты-жөніңіз бен сыныбыңызды толтырыңыз.</p><button id="submit-button" class="button primary" type="button">Нәтижені жіберу →</button></div><div id="result" class="result" hidden></div>
+      </div>
     </section>
-    <footer><span>ҰБТ-ға дайындық</span><span>Күн сайын бір қадам алға ✦</span></footer>
   </main>
-  <script src="app.js"></script>
+  <footer class="wrap footer"><a class="brand" href="#top"><span class="brand-icon">⌘</span><span><b>Info<span>Lab</span></b><small>ИНФОРМАТИКА · ҰБТ-ДАЙЫНДЫҚ</small></span></a><span>Күн сайын бір қадам алға ✦</span></footer>
+  <script src="app.js"></script><script src="topics.js"></script>
 </body>
 </html>
