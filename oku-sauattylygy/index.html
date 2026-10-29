@@ -60,7 +60,7 @@ passages.forEach((passage,p)=>{const group=shuffle(questions.map((q,index)=>({..
  host.innerHTML=passages.map((passage,p)=>{const items=activeQuestions.map((item,index)=>({item,index})).filter(x=>x.item.p===p);
  return '<article class="passage"><div class="passage-head"><h3>'+escapeHTML(passage.title)+'</h3><span class="passage-tag">'+escapeHTML(passage.tag)+'</span></div><p class="passage-text">'+escapeHTML(passage.text)+'</p><div class="q-list">'+items.map(({item,index})=>'<div class="question" data-q="'+index+'"><p class="q-title"><span class="q-number">'+(index+1)+'</span>'+escapeHTML(item.q)+'<span class="level">'+item.level+' деңгей</span></p><div class="options">'+item.options.map((option,j)=>'<label class="option"><input type="radio" name="q'+index+'" value="'+j+'"><span>'+escapeHTML(option)+'</span></label>').join("")+'</div></div>').join("")+'</div></article>'
  }).join("");
- host.addEventListener("change",updateProgress);
+ host.onchange=updateProgress;
  $("progress-label").textContent="0 / 10 жауап";$("progress").style.width="0%";$("result").hidden=true;$("status").className="status";$("status").textContent="Барлық мәтінді оқып, сұрақтарға жауап беріңіз.";const button=$("submit");button.disabled=false;button.textContent="Нәтижені жіберу →"
 }
 function updateProgress(){answers=activeQuestions.map((_,i)=>{const selected=document.querySelector('input[name="q'+i+'"]:checked');return selected?Number(selected.value):null});const done=answers.filter(x=>x!==null).length;$("progress-label").textContent=done+" / 10 жауап";$("progress").style.width=(done*10)+"%";$("status").textContent=done===10?"Барлық жауап белгіленді. Нәтижені жіберуге болады.":"Жауаптарыңызды таңдаңыз."}
